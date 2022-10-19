@@ -4,6 +4,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/Services/api.service';
 import { MatDialog } from '@angular/material/dialog';
+import { ModalService } from '../Services/modal.service';
+import { ModalTemplateComponent } from '../modal-template/modal-template.component';
 
 
 
@@ -15,7 +17,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class EstudianteComponent implements OnInit{
   dataSource: MatTableDataSource<any>;
-  constructor(public service:ApiService, public dialog: MatDialog){
+  constructor(public service:ApiService, public dialog: MatDialog, public modalservice: ModalService){
     this.dataSource = new MatTableDataSource()
   } /* - */
   public displayedColumns: string[] = [];
@@ -54,6 +56,14 @@ export class EstudianteComponent implements OnInit{
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;        
     })
+  }
+
+  openDialog() {
+    this.modalservice.titulo="estudiante"
+    this.dialog.open(ModalTemplateComponent,{
+      width: 'auto',
+      height: 'auto'
+    });
   }
   
 }

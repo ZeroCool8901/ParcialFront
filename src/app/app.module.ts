@@ -24,6 +24,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormularioEstudianteComponent } from './Forms/formulario-estudiante/formulario-estudiante.component';
+import { ModalTemplateComponent } from './modal-template/modal-template.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     EstudianteComponent,
     DocenteComponent,
     FacultadComponent,
-    NavegacionComponent
+    NavegacionComponent,
+    FormularioEstudianteComponent,
+    ModalTemplateComponent
   ],
   imports: [
     BrowserModule,

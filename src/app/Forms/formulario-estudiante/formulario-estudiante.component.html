@@ -1,0 +1,59 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title class="tittle">Datos del Cliente</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nombres" formControlName="firstName">
+            <mat-error *ngIf="addressForm.controls['firstName'].hasError('required')">
+              Este campo es <strong>Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Apellidos" formControlName="lastName">
+            <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
+              Este campo es <strong>Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Correo" formControlName="email">
+            <mat-error *ngIf="addressForm.controls['email'].hasError('required')">
+              Este campo es <strong>Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Dirección" formControlName="address">
+            <mat-error *ngIf="addressForm.controls['address'].hasError('required')">
+              Este campo es <strong>Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Telefono" formControlName="phone">
+            <mat-error *ngIf="addressForm.controls['phone'].hasError('required')">
+              Este campo es <strong>Obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <mat-card-actions class="btn-wrap">
+        <button mat-raised-button mat-dialog-close cdkFocusInitial color="primary" type="submit">Guardar</button>
+        <button mat-raised-button mat-dialog-close color="primary">Cancelar</button>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+</form>
