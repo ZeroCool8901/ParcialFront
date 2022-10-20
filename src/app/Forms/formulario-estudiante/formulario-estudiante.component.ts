@@ -13,7 +13,7 @@ export class FormularioEstudianteComponent {
   addressForm = this.fb.group({
     firstName: [null, Validators.required],
     lastName: [null, Validators.required],
-    Email: [null, Validators.required],
+    email: [null, Validators.required],
     address: [null, Validators.required],
     phone: [null, Validators.required]
   });
@@ -26,9 +26,9 @@ export class FormularioEstudianteComponent {
 
   onSubmit(): void {
     const Estudiante = {
-      nombre: this.addressForm.get('Name')?.value,
+      nombre: this.addressForm.get('firstName')?.value,
       apellido: this.addressForm.get('lastName')?.value,
-      correo: this.addressForm.get('Email')?.value,
+      correo: this.addressForm.get('email')?.value,
       direccion: this.addressForm.get('address')?.value,
       telefono: this.addressForm.get('phone')?.value,
 
